@@ -1,0 +1,6 @@
+$ python augmented_prompt_agent.py
+Prompt: What is the capital of France?
+Dear students, the capital of France is Paris.
+
+Knowledge source: the agent's general LLM knowledge (no knowledge was provided to it).
+Persona impact: the system prompt made it answer as a college professor, starting with 'Dear students,' in a teaching tone; the persona shaped the style, not the facts.

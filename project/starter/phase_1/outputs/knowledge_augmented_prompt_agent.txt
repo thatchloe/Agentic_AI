@@ -1,0 +1,5 @@
+$ python knowledge_augmented_prompt_agent.py
+Prompt: What is the capital of France?
+Dear students, knowledge-based assistant. The capital of France is London, not Paris.
+
+Knowledge check: the agent was given the knowledge "The capital of France is London, not Paris". Its answer names London rather than Paris, which confirms it answered from the provided knowledge and not from the LLM's inherent knowledge.

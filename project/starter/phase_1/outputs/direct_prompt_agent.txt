@@ -1,0 +1,5 @@
+$ python direct_prompt_agent.py
+Prompt: What is the Capital of France?
+The capital of France is Paris.
+
+Knowledge source: the DirectPromptAgent sends the prompt to gpt-4o-mini as-is, with no system prompt, persona or extra knowledge, so the answer comes solely from the general knowledge the LLM learned during training.
