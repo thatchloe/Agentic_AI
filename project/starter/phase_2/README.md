@@ -1,5 +1,5 @@
 # Project Title: AI-Powered Agentic Workflow for Project Management
-# Phase 2: Implement an agentic workflow using a predefined agent library.
+# Phase 2 - Implementing Your Agentic Workflow
 
 Congratulations on reaching Phase 2 of the project! In this phase, you'll use the agent classes from Phase 1 to implement an agentic workflow.
 
@@ -81,9 +81,8 @@ Follow the `TODO` comments in the `agentic_workflow.py` starter code. Below are 
 11. **Define Support Functions (TODO 11):**
     Define the support functions that were referenced in the `func` field of your routing agent's routes (e.g., `product_manager_support_function`, `program_manager_support_function`, `development_engineer_support_function`). Each of these functions should:
     * Accept an input query (this will be a step from the action plan).
-    * Call the `respond()` method of the corresponding Knowledge Augmented Prompt Agent (e.g., `product_manager_knowledge_agent.respond(query)`).
-    * Take the response from the Knowledge Agent and pass it to the `evaluate()` method of the corresponding Evaluation Agent (e.g., `product_manager_evaluation_agent.evaluate(response_from_knowledge_agent)`).
-    * Return the final, validated response (typically found in the `'final_response'` key of the dictionary returned by the `evaluate` method).
+    * Call the `evaluate()` method of the corresponding Evaluation Agent, passing the step itself (e.g., `product_manager_evaluation_agent.evaluate(query)`). The Evaluation Agent invokes its own worker agent internally — do not call `respond()` yourself first.
+    * Return the value stored under the `final_response` key of the dictionary returned by `evaluate()`.
 
 12. **Implement Workflow (TODO 12):**
     This is where the agentic workflow comes together:
@@ -94,6 +93,22 @@ Follow the `TODO` comments in the `agentic_workflow.py` starter code. Below are 
         * Use the `routing_agent.route()` method to pass the current step. This will invoke the appropriate support function based on the routes you defined.
         * Append the result returned by the `routing_agent` to your `completed_steps` list.
         * Print the result of the current step.
-    * After processing all steps, print the final output of the workflow, which is usually the last item in the `completed_steps` list.
+    * After processing all steps, assemble and print a single consolidated project plan with clearly labelled sections for user stories, product features, and engineering tasks. Do not print only the last completed step.
 
 This structured approach will guide you in building a functional agentic workflow. Good luck!
+
+---
+
+## Submission Instructions
+
+Your final submission should include the following:
+
+* Completed `base_agents.py` file (from Phase 1).
+* Completed test scripts for each agent class (from Phase 1).
+* Outputs of each of the agent testing scripts documented and organized in the form of screenshots or in a text file (from Phase 1).
+* Completed `agentic_workflow.py` (from Phase 2).
+* Output of the agentic workflow documented and organized in the form of screenshots or in a text file (from Phase 2).
+
+> **Important:** Your submission zip must contain only the items listed above. Do not include your virtual environment, your `.env` file, `__pycache__` directories, or any datasets — extra items cause the submission to fail with a generic error that does not explain the cause.
+
+Ensure that you check the project rubric to understand the requirements from the different parts of the project before submitting it. Your submission will be reviewed against the project rubric.
