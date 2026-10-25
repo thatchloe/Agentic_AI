@@ -12,7 +12,9 @@ OPENAI_BASE_URL = "https://openai.vocareum.com/v1"
 
 # The project specifies gpt-3.5-turbo, but the Vocareum proxy has deprecated it (every
 # gpt-3.5-turbo request now returns 404 "model_not_found"). gpt-4o-mini is OpenAI's
-# designated replacement for it. Change this one constant to switch models for every agent.
+# designated replacement for it. The captured request and 404 response are in
+# phase_1/outputs/model_availability_check.txt (reproduce with phase_1/model_availability_check.py).
+# Change this one constant to switch models for every agent.
 CHAT_MODEL = "gpt-4o-mini"
 
 

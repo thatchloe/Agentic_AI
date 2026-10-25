@@ -1,0 +1,24 @@
+$ python model_availability_check.py
+Run at: 2026-10-25T14:56:28+00:00
+Endpoint: https://openai.vocareum.com/v1
+API key: voc-71...4475 (masked)
+
+=== gpt-3.5-turbo ===
+Request: POST https://openai.vocareum.com/v1/chat/completions
+Request body: {"messages":[{"role":"user","content":"Reply with the single word OK."}],"model":"gpt-3.5-turbo","temperature":0}
+Response: HTTP 404
+Response body: {
+  "error": {
+    "message": "The model `gpt-3.5-turbo` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": "model_not_found"
+  }
+}
+
+=== gpt-4o-mini ===
+Request: POST https://openai.vocareum.com/v1/chat/completions
+Request body: {"messages":[{"role":"user","content":"Reply with the single word OK."}],"model":"gpt-4o-mini","temperature":0}
+Response: HTTP 200
+Model that answered: gpt-4o-mini-2024-07-18
+Reply: OK
